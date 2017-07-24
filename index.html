@@ -8,6 +8,7 @@
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="test.js"></script>
 </head>
 <style>
     body{
@@ -16,21 +17,31 @@
     .yellow-text{
         color: yellow;
     }
-    .keep-at-top{
-        position: fixed;
-        border: 1px solid gray;
-        width: 100%;
-        z-index:1;
+    .top{
+        border: 1px solid rgb(32,32,32);
+        align-content: center;
+    }
+    #middle-box{
+        position:absolute;
+        border-radius: 25px;
+        top: 27%;
+        left: 32.7%;
+        background-color: white;
+        padding: 150 250 150 250;
     }
 </style>
 <body>
     <div class="container-fluid">
-    <div class="col-xs-12 keep-at-top">
+    <div class="row">
+    <div class="col-xs-12 top">
     <h1 class="yellow-text">Quote Machine</h1>
     </div>
-<div>
-    <h2 style = "text-align: center">Did it work??</h2>
+    </div>
+<div id = "middle-box">
+    <div id = "quote">
     </div>
     </div>
+    </div>
+$("#quote").load("https://talaikis.com/api/quotes/random/");
 </body>
 </html>
