@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    $(middle-box).fadeIn('slow');
+    $("#middle-box").addClass("animated fadeOut")
 });
