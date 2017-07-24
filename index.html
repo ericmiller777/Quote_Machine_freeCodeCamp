@@ -31,7 +31,7 @@
 </style>
 <body>
     <script>$(document).ready(function() {
-    $("#topText").addClass("animated fadeOut")
+    $("h1").addClass("animated fadeOut")
 });</script>
     <div class="container-fluid">
     <div class="row">
@@ -41,9 +41,9 @@
     </div>
 <div id = "middle-box">
     <div id = "quote">
+        <script>$("#quote").load("https://talaikis.com/api/quotes/random/");</script>
     </div>
     </div>
     </div>
-<script>$("#quote").load("https://talaikis.com/api/quotes/random/");</script>;
 </body>
 </html>
