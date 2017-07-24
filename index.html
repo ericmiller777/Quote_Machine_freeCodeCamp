@@ -8,7 +8,6 @@
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="test.js"></script>
 </head>
 <style>
     body{
@@ -31,10 +30,13 @@
     }
 </style>
 <body>
+    <script>$(document).ready(function() {
+    $("#topText").addClass("animated fadeOut")
+});</script>
     <div class="container-fluid">
     <div class="row">
     <div class="col-xs-12 top">
-    <h1 class="yellow-text">Quote Machine</h1>
+    <h1 id = "topText" class="yellow-text">Quote Machine</h1>
     </div>
     </div>
 <div id = "middle-box">
@@ -42,6 +44,6 @@
     </div>
     </div>
     </div>
-<!-- $("#quote").load("https://talaikis.com/api/quotes/random/"); -->
+<script>$("#quote").load("https://talaikis.com/api/quotes/random/");</script>;
 </body>
 </html>
