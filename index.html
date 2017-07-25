@@ -39,6 +39,9 @@
     <script>$(document).ready(function() {
     $("h1").addClass("animated fadeOut");
 });</script>
+<script>$.getJSON(("https://talaikis.com/api/quotes/random/", function(json) {
+    $(".message").html(JSON.stringify(json));
+}));</script>
     <div class="container-fluid">
     <div class="row">
     <div class="col-xs-12 top">
@@ -47,7 +50,7 @@
     </div>
 <div id = "middle-box">
     <div id = "quote">
-        <!-- <script>$("#quote").load("https://talaikis.com/api/quotes/random/");</script> -->
+    <h2 class = "message">test</h2>
     </div>
     </div>
     </div>
