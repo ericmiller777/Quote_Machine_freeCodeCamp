@@ -39,8 +39,13 @@
     <script>$(document).ready(function() {
     //$("h1").addClass("animated fadeOut");
 });</script>
-<script>$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-  $("#quote").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
+<script>
+$("#getQuote").on("click", function(){
+
+$.ajaxSetup({cache:false});
+$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+  $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
+});
 });</script>
     <div class="container-fluid">
     <div class="row">
@@ -49,8 +54,9 @@
     </div>
     </div>
 <div id = "middle-box">
-    <div id = "quote">
-    <h2 class = "message">test</h2>
+    <div id = "quote" class = "quote message">
+    <h2 id = "quoteText" class = "quote message">test</h2>
+    <button id = "getQuote" class = "btn btn-primary">test</button>
     </div>
     </div>
     </div>
