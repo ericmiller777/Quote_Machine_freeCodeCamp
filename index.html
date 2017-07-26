@@ -34,7 +34,7 @@
         width:100%;
         align-content: center;
         overflow:hidden;
-        margin-right:500px;
+        
     }
 </style>
 <body>
@@ -45,16 +45,25 @@
     </div>
     </div>
 <div id = "middle-box">
-    <div id = "quote" class = "quote" style = "margin-right:32px;">
+    <div id = "quote" class = "quote" style = "margin-right:15px;">
     <h2 style="text-align: center" id = "quoteText" class = "quote message"></h2>
+    <div class = "row">
+    <div class="col-xs-1">
     <button id = "getQuote" class = "btn btn-primary">New Quote</button>
+    </div>
+    <div class="col-xs-10">
+    </div>
+    <div class="col-xs-1">
     <button  id = "tweet" class = "btn btn-primary">Tweet</button>
+    <div>
+    </div>
     </div>
     </div>
     </div>
 <script>
-    $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-  $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")});
+$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+$(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")});
+
 $("#getQuote").on("click", function(){
 
 $.ajaxSetup({cache:false});
@@ -62,6 +71,7 @@ $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[
   $(".message").html("");
   $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
 });
-});</script>
+});
+</script>
 </body>
 </html>
