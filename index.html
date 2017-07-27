@@ -77,11 +77,11 @@ $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[
 });
 
 $("#tweet").on("click", function(b){
-var quote = $(".message").text();
-if (quote.length > 140){
+var quoteTweet = $(".message").text();
+if (quoteTweet.length > 140){
     alert("Quote too long to tweet");
 }else{
-    var twitter = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(quote);
+    var twitter = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(quoteTweet);
     window.open(twitter, "_blank");
 }
 });
