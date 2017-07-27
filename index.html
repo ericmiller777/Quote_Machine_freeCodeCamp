@@ -82,7 +82,7 @@ var quoteTweet = quote;
 if (quoteTweet.length > 140){
     alert("Quote too long to tweet");
 }else{
-    var twitter = "http://twitter.com/home?status=" + encodeURIComponent(quote);
+    var twitter = "http://twitter.com/home?status=" + encodeURIComponent($(".message").text);
     window.open(twitter, "_blank");
 }
 });
