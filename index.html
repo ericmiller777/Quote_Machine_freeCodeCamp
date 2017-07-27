@@ -1,96 +1,101 @@
 <html>
+
 <head>
-<!-- Hello freeCodeCamp Checker :) -->
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Hello freeCodeCamp Checker :) -->
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
- <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-  crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+        crossorigin="anonymous">
 
- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 </head>
 <style>
-    body{
+    body {
         background-color: black;
     }
-    .yellow-text{
+
+    .yellow-text {
         color: yellow;
     }
-    .top{
-        border: 1px solid rgb(32,32,32);
+
+    .top {
+        border: 1px solid rgb(32, 32, 32);
         align-content: center;
     }
-    #middle-box{
-        position:absolute;
+
+    #middle-box {
+        position: absolute;
         border-radius: 25px;
         top: 27%;
-        
+
         background-color: white;
-        width:90%;
+        width: 90%;
         margin-left: 85px;
         align-content: center;
-        overflow:hidden;
-        
+        overflow: hidden;
     }
 </style>
+
 <body>
     <div class="container-fluid">
-    <div class="row">
-    <div class="col-xs-12 top">
-    <h1 id = "topText" class="yellow-text">Quote Machine</h1>
-    </div>
-    </div>
-<div id = "middle-box">
-    <div id = "quote" class = "quote">
-    <h2 style="text-align: center" id = "quoteText" class = "quote message"></h2>
-    <div class = "row">
-    <div class="col-xs-1">
-    <button id = "getQuote" class = "btn btn-primary">New Quote</button>
-    </div>
-    <div class="col-xs-10">
-    </div>
-    <div style="padding-left: 50px" class="col-xs-1">
-    <button  id = "tweet" class = "btn btn-primary"><i class="fa fa-twitter" aria-hidden="true"></i>
+        <div class="row">
+            <div class="col-xs-12 top">
+                <h1 id="topText" class="yellow-text">Quote Machine</h1>
+            </div>
+        </div>
+        <div id="middle-box">
+            <div id="quote" class="quote">
+                <h2 style="text-align: center" id="quoteText" class="quote message"></h2>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button id="getQuote" class="btn btn-primary">New Quote</button>
+                    </div>
+                    <div class="col-xs-10">
+                    </div>
+                    <div style="padding-left: 50px" class="col-xs-1">
+                        <button id="tweet" class="btn btn-primary"><i class="fa fa-twitter" aria-hidden="true"></i>
 Tweet</button>
-    <div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer style="position:absolute; bottom:0px; text-align: center; color: yellow; background-color: black; height: 21px; margin-left:50px; width:90%;">Eric Miller 2017 freeCodeCamp</footer>
     </div>
-    </div>
-    </div>
-    </div>
-</div>
-<footer style="position:absolute; bottom:0px; text-align: center; color: yellow; background-color: black; height: 21px; margin-left:50px; width:90%;">Eric Miller 2017 freeCodeCamp</footer>
-</div>
-<script>
-$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-$(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")});
+    <script>
+        $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function (a) {
+            $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
+        });
 
-$("#getQuote").on("click", function(){
+        $("#getQuote").on("click", function () {
 
-$.ajaxSetup({cache:false});
-$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-  $(".message").html("");
-  $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
-});
-});
+            $.ajaxSetup({ cache: false });
+            $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function (a) {
+                $(".message").html("");
+                $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
+            });
+        });
 
-$("#tweet").on("click", function(b){
-var quoteTweet = $(".message").text();
-if (quoteTweet.length > 140){
-    alert("Quote too long to tweet");
-}else{
-    var twitter = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(quoteTweet);
-    window.open(twitter, "_blank");
-}
-});
-</script>
+        $("#tweet").on("click", function (b) {
+            var quoteTweet = $(".message").text();
+            if (quoteTweet.length > 140) {
+                alert("Quote too long to tweet");
+            } else {
+                var twitter = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(quoteTweet);
+                window.open(twitter, "_blank");
+            }
+        });
+
+    </script>
 </body>
+
 </html>
