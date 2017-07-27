@@ -77,7 +77,7 @@ $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[
 });
 
 $("#tweet").on("click", function(b){
-var quote = $(".message").text;
+var quote = $(".message").text(0);
 if (quote.length > 140){
     alert("Quote too long to tweet");
 }else{
