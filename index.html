@@ -64,6 +64,7 @@ Tweet</button>
     </div>
     </div>
 <script>
+var quote = $(".message").text;
 $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
 $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")});
 
@@ -74,6 +75,16 @@ $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[
   $(".message").html("");
   $(".message").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
 });
+});
+
+$("#tweet").on("click", function(){
+var quoteTweet = quote;
+if (quoteTweet.length > 140){
+    alert("Quote too long to tweet");
+}else{
+    var twitter = "http://twitter.com/home?status=" + encodeURIComponent(quoteTweet);
+    window.open(twitter, "_blank");
+}
 });
 </script>
 </body>
