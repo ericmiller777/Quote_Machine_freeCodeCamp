@@ -93,8 +93,8 @@ Tweet</button>
 
         $("#tweet").on("click", function (b) {
             var quoteTweet = $(".message").text();
-            if (quoteTweet.length > 140) {
-                alert("Quote too long to tweet");
+            if (quoteTweet.length > 280) {
+                alert("Quote too long to tweet :(");
             } else {
                 var twitter = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(quoteTweet);
                 window.open(twitter, "_blank");
